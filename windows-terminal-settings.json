@@ -1,53 +1,28 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": "scrollDownPage",
-            "keys": "pgdn"
-        },
-        {
-            "command": 
-            {
-                "action": "closeTab"
-            },
-            "keys": "ctrl+f4"
-        },
-        {
-            "command": 
-            {
-                "action": "newTab"
-            },
-            "keys": "ctrl+t"
-        },
-        {
-            "command": 
-            {
-                "action": "findMatch",
-                "direction": "next"
-            },
-            "keys": "shift+f3"
-        },
-        {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": true
             },
             "keys": "ctrl+shift+c"
         },
         {
-            "command": "closePane",
-            "keys": "ctrl+shift+f4"
-        },
-        {
             "command": "paste",
             "keys": "ctrl+shift+v"
         },
         {
-            "command": 
-            {
+            "command": "closeTab",
+            "keys": "ctrl+f4"
+        },
+        {
+            "command": "newTab",
+            "keys": "ctrl+t"
+        },
+        {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -55,49 +30,73 @@
             "keys": "ctrl+shift+s"
         },
         {
+            "command": "closePane",
+            "keys": "ctrl+shift+f4"
+        },
+        {
             "command": "find",
             "keys": "ctrl+f"
         },
         {
-            "command": "scrollUpPage",
-            "keys": "pgup"
+            "command": {
+                "action": "findMatch",
+                "direction": "next"
+            },
+            "keys": "shift+f3"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "findMatch",
                 "direction": "prev"
             },
             "keys": "f3"
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": "pageup"
+        },
+        {
+            "command": "scrollDownPage",
+            "keys": "pagedown"
+        },
+        {
+            "command": "scrollToTop",
+            "keys": "ctrl+home"
+        },
+        {
+            "command": "scrollToBottom",
+            "keys": "ctrl+end"
+        },
+        {
+            "command": {
+                "action": "openSettings",
+                "target": "settingsUI"
+            },
+            "keys": "ctrl+shift+,"
         }
     ],
-    "copyFormatting": "none",
+    "copyFormatting": false,
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "newTabMenu": 
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "backgroundImageAlignment": "bottomRight",
             "backgroundImageOpacity": 0.5,
             "backgroundImageStretchMode": "none",
-            "font": 
-            {
+            "font": {
                 "face": "CaskaydiaCove NF"
             },
             "startingDirectory": "C:/git",
             "useAcrylic": false
         },
-        "list": 
-        [
+        "list": [
             {
-                "backgroundImage": "C:/Users/bo soborg/OneDrive - 3Shape A S/Pictures/Icons/PowerShell_Hero.png",
+                "backgroundImage": "%USERPROFILE%/OneDrive - 3Shape A S/Pictures/Icons/PowerShell_Hero.png",
                 "colorScheme": "Sonokai Shusia",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
@@ -128,6 +127,14 @@
                 "tabColor": "#007FFF"
             },
             {
+                "backgroundImage": "%USERPROFILE%/OneDrive - 3Shape A S/Pictures/Icon/Icons/Ubuntu_Icon_256.png",
+                "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
+                "icon": "C:/Users/bo soborg/OneDrive - 3Shape A S/Pictures/Icons/Ubuntu_Icon_256.png",
+                "name": "Ubuntu-18.04",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "//wsl$/Ubuntu-18.04/mnt"
+            },
+            {
                 "backgroundImage": "C:/Users/bo soborg/OneDrive - 3Shape A S/Pictures/Icons/AKS.png",
                 "commandline": "pwsh -c \"& { docker pull bo0petersen/aks-cli && docker run --rm -it -v c:/git/OpenSource/aks-cli/mapped:/app/mapped bo0petersen/aks-cli }\"",
                 "guid": "{636d6d48-1d06-40e6-9958-77569099d16c}",
@@ -148,8 +155,7 @@
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -404,5 +410,7 @@
             "yellow": "#808000"
         }
     ],
+    "startupActions": "new-tab; new-tab -p \"Command Prompt\"",
+    "tabSwitcherMode": "mru",
     "themes": []
 }
